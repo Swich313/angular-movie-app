@@ -1,5 +1,92 @@
-<p>details works!</p>
+<h1>Movie Title</h1>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <iframe width="540" height="360"
+            src="https://www.youtube.com/embed/iPhfxYGVLi8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
 
-<app-details-movies></app-details-movies>
+    </iframe>
+  </div>
+  <div class="col-md-6">
+    <p class="lead">This is going to be a placeholder for the movie plot</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Stars</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">First Start</li>
+            <li class="list-group-item">Second Start</li>
+            <li class="list-group-item">Third Start</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Directors</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Director 1 name</li>
+            <li class="list-group-item">Director 2 name</li>
+            <li class="list-group-item">Director 3 name</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Genre</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Genre 1</li>
+            <li class="list-group-item">Genre 2</li>
+            <li class="list-group-item">Genre 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<app-details-reviews></app-details-reviews>
+<hr>
+<br>
+
+<div class="row">
+  <h1>Actors</h1>
+  <br>
+  <div class="col-md-12 text-center">
+  <app-details-actors></app-details-actors>
+  </div>
+
+  <div class="text-center">
+    <a class="btn btn-warning">View all actors</a>
+  </div>
+</div>
+
+<hr>
+<br>
+
+<div class="row">
+  <h1>Reviews</h1>
+  <br>
+
+  <div class="col-md-12">
+    <app-details-reviews></app-details-reviews>
+  </div>
+  <div class="text-center mt-3">
+    <a class="btn btn-warning">View all reviews</a>
+  </div>
+</div>
+
+<hr>
+<br>
+
+<div class="row">
+  <h1>Similar Movies</h1>
+  <br>
+
+  <div class="col-md-12 text-center">
+    <app-details-movies></app-details-movies>
+  </div>
+</div>
+
