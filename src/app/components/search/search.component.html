@@ -1,1 +1,88 @@
-<p>search works!</p>
+<h1>Results for the {{movieTitle | async}}</h1>
+<hr>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Cover</th>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>
+      <img src="../../../assets/images/img_1.png" alt="" width="150">
+    </td>
+    <td>Movie 1 Title</td>
+    <td>Short description of </td>
+    <td>
+      <a href="#" class="btn btn-warning mx-3"
+         data-bs-toggle="modal" data-bs-target="#exampleModal"
+      >
+        <i class="bi bi-film"></i>Trailer
+      </a>
+      <a routerLink="/details" class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>
+      <img src="../../../assets/images/img_1.png" alt="" width="150">
+    </td>
+    <td>Movie 2 Title</td>
+    <td>Short description of </td>
+    <td>
+      <a href="#" class="btn btn-warning mx-3"
+         data-bs-toggle="modal" data-bs-target="#exampleModal"
+      >
+        <i class="bi bi-film"></i>Trailer
+      </a>
+      <a routerLink="/details" class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>
+      <img src="../../../assets/images/img_1.png" alt="" width="150">
+    </td>
+    <td>Movie 3 Title</td>
+    <td>Short description of </td>
+    <td>
+      <a class="btn btn-warning mx-3"
+         data-bs-toggle="modal" data-bs-target="#exampleModal"
+      >
+        <i class="bi bi-film"></i>Trailer
+      </a>
+      <a routerLink="/details" class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="100%" height="360"
+                src="https://www.youtube.com/embed/iPhfxYGVLi8"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+
+        </iframe>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <b>{{movieTitle}}</b>
+      </div>
+    </div>
+  </div>
+</div>

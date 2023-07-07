@@ -1,4 +1,5 @@
 import {AfterContentInit, AfterViewInit, Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-details',
@@ -6,6 +7,15 @@ import {AfterContentInit, AfterViewInit, Component, OnChanges, OnInit, SimpleCha
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, AfterViewInit{
+  movieId = '';
+
+  constructor(private _activatedRoute: ActivatedRoute) {
+    this._activatedRoute.params.subscribe((param) => {
+        this.movieId = param?.["id"];
+        console.log(this.movieId);
+    })
+  }
+
   ngOnInit(): void {
     console.log("ngOnInit is called!")
   }

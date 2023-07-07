@@ -1,7 +1,7 @@
 <h1>Movie Title</h1>
 <br>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-xl-6">
     <iframe width="540" height="360"
             src="https://www.youtube.com/embed/iPhfxYGVLi8"
             title="YouTube video player"
@@ -11,7 +11,7 @@
 
     </iframe>
   </div>
-  <div class="col-md-6">
+  <div class="col-xl-6">
     <p class="lead">This is going to be a placeholder for the movie plot</p>
     <div class="row">
       <div class="col-md-4">
@@ -59,7 +59,7 @@
   </div>
 
   <div class="text-center">
-    <a class="btn btn-warning">View all actors</a>
+    <a class="btn btn-warning" [routerLink]="['/details/actors/'+movieId]">View all actors</a>
   </div>
 </div>
 
@@ -74,7 +74,7 @@
     <app-details-reviews></app-details-reviews>
   </div>
   <div class="text-center mt-3">
-    <a class="btn btn-warning">View all reviews</a>
+    <a class="btn btn-warning" [routerLink]="['/details/reviews/'+movieId]">View all reviews</a>
   </div>
 </div>
 
@@ -88,5 +88,11 @@
   <div class="col-md-12 text-center">
     <app-details-movies></app-details-movies>
   </div>
+  <div class="text-center mt-3">
+    <a class="btn btn-warning" [routerLink]="['/details/movies/'+movieId]">View more</a>
+  </div>
 </div>
 
+<!--START NESTED ROUTES-->
+<!--<router-outlet></router-outlet>-->
+<!--END NESTED ROUTES-->

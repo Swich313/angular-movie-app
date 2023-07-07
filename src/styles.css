@@ -2,3 +2,12 @@
 h1 {
   color: #ffc107;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: blue;
+    color: deeppink;
+  }
+}
+
+
