@@ -12,6 +12,5 @@ export class SearchComponent {
 
   constructor(private _activatedRoute: ActivatedRoute) {
       this.movieTitle = this._activatedRoute.params.pipe(map(p => p?.['movieTitle']));
-      console.log(this.movieTitle)
   }
 }

@@ -20,7 +20,7 @@
     <td>Movie 1 Title</td>
     <td>Short description of </td>
     <td>
-      <a href="#" class="btn btn-warning mx-3"
+      <a href="#" class="btn btn-warning"
          data-bs-toggle="modal" data-bs-target="#exampleModal"
       >
         <i class="bi bi-film"></i>Trailer
@@ -36,7 +36,7 @@
     <td>Movie 2 Title</td>
     <td>Short description of </td>
     <td>
-      <a href="#" class="btn btn-warning mx-3"
+      <a href="#" class="btn btn-warning"
          data-bs-toggle="modal" data-bs-target="#exampleModal"
       >
         <i class="bi bi-film"></i>Trailer
@@ -52,7 +52,7 @@
     <td>Movie 3 Title</td>
     <td>Short description of </td>
     <td>
-      <a class="btn btn-warning mx-3"
+      <a class="btn btn-warning"
          data-bs-toggle="modal" data-bs-target="#exampleModal"
       >
         <i class="bi bi-film"></i>Trailer
@@ -81,7 +81,7 @@
         </iframe>
       </div>
       <div class="modal-footer justify-content-center">
-        <b>{{movieTitle}}</b>
+        <b>{{movieTitle | async}}</b>
       </div>
     </div>
   </div>

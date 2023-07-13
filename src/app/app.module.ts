@@ -19,6 +19,7 @@ import {RouterModule} from "@angular/router";
 import {AppRoutesModule} from "./modules/app.routes";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { HeaderDirective } from './directive/header.directive';
 
 
 @NgModule({
@@ -34,10 +35,13 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     SearchComponent,
     LoaderComponent,
     ModalComponent,
-    ProfitPipe,
     DetailsActorsComponent,
     NotFoundComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    //Pipes
+    ProfitPipe,
+    //Directives
+    HeaderDirective,
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, AfterViewInit{
   movieId = '';
 
+  stars: string[] = ['Star #1 Name', 'Star #2 Name', 'Star #3 Name'];
+  genres: string[] = ['Genre #1 Name', 'Genre #2 Name', 'Genre #3 Name'];
+  directors: string[] = ['Director #1 Name', 'Director #2 Name', 'Director #3 Name'];
+
   constructor(private _activatedRoute: ActivatedRoute) {
     this._activatedRoute.params.subscribe((param) => {
         this.movieId = param?.["id"];
