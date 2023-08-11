@@ -1,0 +1,42 @@
+[
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #1 Title",
+    "rate": 9.5
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #1 Title",
+    "rate": 9.1
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #2 Title",
+    "rate": 9.2
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #3 Title",
+    "rate": 9.3
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #4 Title",
+    "rate": 9.4
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #5 Title",
+    "rate": 9.5
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #6 Title",
+    "rate": 9.6
+  },
+  {
+    "imageUrl": "../../../assets/images/img_1.png",
+    "title": "Movie #7 Title",
+    "rate": 9.7
+  }
+]

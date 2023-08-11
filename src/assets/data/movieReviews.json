@@ -1,0 +1,26 @@
+[
+  {
+    "rate": 7.5,
+    "header": "This is the first item accordion body.",
+    "body": "Body 1",
+    "author": "Author #1",
+    "votes": 100,
+    "totalVotes": 123
+  },
+  {
+    "rate": 8.2,
+    "header": "This is the second item accordion body.",
+    "body": "Body 2",
+    "author": "Author #1",
+    "votes": 56,
+    "totalVotes": 123
+  },
+  {
+    "rate": 5.5,
+    "header": "This is the third item accordion body.",
+    "body": "Body 3",
+    "author": "Author #1",
+    "votes": 83,
+    "totalVotes": 123
+  }
+]

@@ -15,11 +15,13 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ProfitPipe } from './pipes/profit.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
-import {RouterModule} from "@angular/router";
 import {AppRoutesModule} from "./modules/app.routes";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { HeaderDirective } from './directive/header.directive';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -48,6 +50,9 @@ import { HeaderDirective } from './directive/header.directive';
     AppRoutesModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

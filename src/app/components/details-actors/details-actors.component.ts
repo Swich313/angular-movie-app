@@ -1,46 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+
+interface movieActor {
+  imageUrl: string;
+  name: string;
+  role: string;
+}
 
 @Component({
   selector: 'app-details-actors',
   templateUrl: './details-actors.component.html',
   styleUrls: ['./details-actors.component.css']
 })
-export class DetailsActorsComponent {
-  movieActors: any[] = [
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #1 name',
-      role: 'Role #1'
-    },
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #2 name',
-      role: 'Role #2'
-    },
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #3 name',
-      role: 'Role #3'
-    },
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #4 name',
-      role: 'Role #4'
-    },
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #5 name',
-      role: 'Role #5'
-    },
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #6 name',
-      role: 'Role #6'
-    },
-    {
-      imageUrl: '../../../assets/images/img.png',
-      name: 'Actor #7 name',
-      role: 'Role #7'
-    },
-  ];
+export class DetailsActorsComponent implements OnInit {
+  movieActors: movieActor[] = [];
+
+  constructor(private httpClient: HttpClient) {
+  }
+  ngOnInit(): void {
+    this.getMovieActors();
+  }
+
+  getMovieActors(){
+    this.httpClient.get<movieActor[]>('assets/data/movieActors.json')
+      .subscribe(data => {
+        console.log("actors", data);
+        this.movieActors = data
+      })
+  }
+
 }

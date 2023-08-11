@@ -1,56 +1,8 @@
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
+<figure class="figure" *ngFor="let movie of similarMovies">
+  <img [src]="movie.imageUrl"
        class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
-</figure>
-
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
-       class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
-</figure>
-
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
-       class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
-</figure>
-
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
-       class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
-</figure>
-
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
-       class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
-</figure>
-
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
-       class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
-</figure>
-
-<figure class="figure">
-  <img src="../../../assets/images/img_1.png"
-       class="figure-img img-thumbnail img-fluid rounded"
-       alt="Acorners in a figure.">
-  <figcaption class="figure-caption">Movie 1 Title</figcaption>
-  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>9.5/10</b></figcaption>
+       [alt]="movie.title">
+  <figcaption class="figure-caption">{{movie.title}}</figcaption>
+  <figcaption class="figure-caption"><i class="bi bi-star"></i><b>{{movie.rate}}/10</b></figcaption>
 </figure>
 

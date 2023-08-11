@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'app-not-found',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent {
-
+  color: ThemePalette = 'accent';
+  checked = true;
+  disabled = true;
 }

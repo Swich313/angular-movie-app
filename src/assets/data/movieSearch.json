@@ -1,0 +1,23 @@
+[
+  {
+    "id": "s1",
+    "imageUrl": "../../../assets/images/Book1.jpg",
+    "title": "Search Movie #1 Title",
+    "description": "Search Movie #1 description",
+    "detailLink": "/details/s1"
+  },
+  {
+    "id": "s2",
+    "imageUrl": "../../../assets/images/Book1.jpg",
+    "title": "Search Movie #2 Title",
+    "description": "Search Movie #2 description",
+    "detailLink": "/details/s2"
+  },
+  {
+    "id": "s3",
+    "imageUrl": "../../../assets/images/Book1.jpg",
+    "title": "Search Movie #3 Title",
+    "description": "Search Movie #3 description",
+    "detailLink": "/details/s3"
+  }
+]

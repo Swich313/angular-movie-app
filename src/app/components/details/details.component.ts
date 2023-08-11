@@ -1,19 +1,20 @@
-import {AfterContentInit, AfterViewInit, Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, AfterViewInit{
+export class DetailsComponent implements OnInit{
   movieId = '';
 
-  stars: string[] = ['Star #1 Name', 'Star #2 Name', 'Star #3 Name'];
-  genres: string[] = ['Genre #1 Name', 'Genre #2 Name', 'Genre #3 Name'];
-  directors: string[] = ['Director #1 Name', 'Director #2 Name', 'Director #3 Name'];
+  stars: string[] = [];
+  genres: string[] = [];
+  directors: string[] = [];
 
-  constructor(private _activatedRoute: ActivatedRoute) {
+  constructor(private _activatedRoute: ActivatedRoute, private httpClient: HttpClient) {
     this._activatedRoute.params.subscribe((param) => {
         this.movieId = param?.["id"];
         console.log(this.movieId);
@@ -21,19 +22,15 @@ export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, Af
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit is called!")
+      this.getMovieSummary();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("ngOnChanges is called!")
-  }
+  getMovieSummary() {
+    this.httpClient.get('assets/data/movieSummary.json').subscribe((data: any) => {
+      this.directors = data.directors;
+      this.stars = data.stars;
+      this.genres = data.genres;
+    })
 
-  ngAfterContentInit(): void {
-    console.log("ngAfterContentInit is called!")
   }
-
-  ngAfterViewInit(): void {
-    console.log("ngAfterViewInit is called!")
-  }
-
 }
