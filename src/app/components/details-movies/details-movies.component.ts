@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {MoviesService} from "../../services/movies.service";
 
-interface similarMovie {
+export interface similarMovie {
   imageUrl: string,
   title: string,
   rate: number
@@ -14,47 +15,8 @@ interface similarMovie {
 })
 export class DetailsMoviesComponent implements OnInit{
   similarMovies: similarMovie[] = [];
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #1 Title',
-    //   rate: 9.5
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #1 Title',
-    //   rate: 9.1
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #2 Title',
-    //   rate: 9.2
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #3 Title',
-    //   rate: 9.3
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #4 Title',
-    //   rate: 9.4
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #5 Title',
-    //   rate: 9.5
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #6 Title',
-    //   rate: 9.6
-    // },
-    // {
-    //   imageUrl: '../../../assets/images/img_1.png',
-    //   title: 'Movie #7 Title',
-    //   rate: 9.7
-    // }
-    constructor(private httpClient: HttpClient) {
+
+    constructor(private moviesService: MoviesService) {
     }
 
   ngOnInit(): void {
@@ -62,7 +24,7 @@ export class DetailsMoviesComponent implements OnInit{
   }
 
   getSimilarMovies() {
-      this.httpClient.get<similarMovie[]>('assets/data/similarMovies.json')
+      this.moviesService.getSimilarMovies()
         .subscribe(data => {
           console.log(data)
           this.similarMovies = data;

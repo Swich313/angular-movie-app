@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {catchError, of} from "rxjs";
+import {MoviesService} from "../../services/movies.service";
 
-interface fanFavouriteMovie {
+export interface fanFavouriteMovie {
   id: string;
   imageUrl: string;
   title: string;
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit{
   fanFavouriteMovies: fanFavouriteMovie[] = [];
   topMovies: any[] = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private moviesService: MoviesService) {
   }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit{
   }
   //http request using error handling via subscribe
   getFanFavouriteMovies() {
-    this.httpClient.get<fanFavouriteMovie[]>('assets/data/fanFavouriteMovies.json')
+    this.moviesService.getFanFavouriteMovies()
       .subscribe({
         next: (data) => {
           this.fanFavouriteMovies = data;
@@ -48,7 +49,7 @@ export class HomeComponent implements OnInit{
   }
   //http request using error handling via pipe
   getTopMovies() {
-    this.httpClient.get<any[]>('assets/data/topMovies.json')
+    this.moviesService.getTopMovies()
       .pipe(
         catchError((error) => {
       console.log("getTopMovies error:", error)

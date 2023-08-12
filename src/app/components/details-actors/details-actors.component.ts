@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {MoviesService} from "../../services/movies.service";
 
-interface movieActor {
+export interface movieActor {
   imageUrl: string;
   name: string;
   role: string;
@@ -15,14 +16,14 @@ interface movieActor {
 export class DetailsActorsComponent implements OnInit {
   movieActors: movieActor[] = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private moviesService: MoviesService) {
   }
   ngOnInit(): void {
     this.getMovieActors();
   }
 
   getMovieActors(){
-    this.httpClient.get<movieActor[]>('assets/data/movieActors.json')
+    this.moviesService.getMovieActors()
       .subscribe(data => {
         console.log("actors", data);
         this.movieActors = data

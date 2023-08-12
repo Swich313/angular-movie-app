@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {MoviesService} from "../../services/movies.service";
 
-interface review {
+export interface review {
   rate: number;
   header: string;
   body: string;
@@ -18,7 +19,7 @@ interface review {
 export class DetailsReviewsComponent implements OnInit{
   reviews: review[] = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private moviesService: MoviesService) {
   }
 
   ngOnInit(): void {
@@ -26,7 +27,7 @@ export class DetailsReviewsComponent implements OnInit{
   }
 
   getMovieReviews(){
-    this.httpClient.get<review[]>('assets/data/movieReviews.json')
+    this.moviesService.getMovieReviews()
       .subscribe(data => {
         console.log("reviews", data)
         this.reviews = data;

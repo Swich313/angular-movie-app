@@ -22,6 +22,7 @@ import { HeaderDirective } from './directive/header.directive';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {HttpClientModule} from "@angular/common/http";
+import {MoviesService} from "./services/movies.service";
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatSlideToggleModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule{ }

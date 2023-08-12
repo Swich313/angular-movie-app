@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {map, Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {MoviesService} from "../../services/movies.service";
 
-interface searchResult {
+export interface searchResult {
   id: number;
   title: string;
   description: string;
@@ -20,8 +20,8 @@ export class SearchComponent implements OnInit{
   movieTitle:Observable<string>;
   searchResult: searchResult[] = [];
 
-  constructor(private _activatedRoute: ActivatedRoute, private httpClient: HttpClient) {
-      this.movieTitle = this._activatedRoute.params.pipe(map(p => p?.['movieTitle']));
+  constructor(private activatedRoute: ActivatedRoute, private moviesService: MoviesService) {
+      this.movieTitle = this.activatedRoute.params.pipe(map(p => p?.['movieTitle']));
   }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit{
   }
 
   searchMovies() {
-    this.httpClient.get<searchResult[]>('assets/data/movieSearch.json')
+    this.moviesService.searchMovies()
       .subscribe(data => {
         this.searchResult = data;
         console.log(data)
